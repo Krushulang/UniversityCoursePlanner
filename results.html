@@ -1,0 +1,170 @@
+<!doctype html>
+<head>
+    <title>Results Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+<html>
+   <body>
+     <main>
+        <div class="px-4 py-3 my-2 text-center">
+            <!-- <h1 class="display-6 fw-bold">Current Campus: {{campus}}</h1>
+            <h1 class="display-6 fw-bold">Current Major: {{major}}</h1>
+            <h1 class="display-6 fw-bold">Current Departments: {{departments}}</h1>
+            <h1 class="display-6 fw-bold">Current Courses: {{courses}}</h1>
+            <h1 class="display-6 fw-bold">Current Quarter: {{quarter}}</h1>
+            <h1 class="display-6 fw-bold">Current Days: {{days}}</h1>
+            <h1 class="display-6 fw-bold">Current In-Person: {{inperson}}</h1>
+            <h1 class="display-6 fw-bold">Current Online: {{online}}</h1>
+            <h1 class="display-6 fw-bold">Current Education Requirements: {{education}}</h1>
+            <h1 class="display-6 fw-bold">Current Curriculums: {{curriculum}}</h1>
+            <h1 class="display-6 fw-bold">Current Time: {{time}}</h1>
+            <h1 class="display-6 fw-bold">Current Size: {{size}}</h1> -->
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div id="topcourse" class="card text-bg-info mb-3" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename1}}, Section {{section1}}</h5>
+                      <h6 class="card-subtitle mb-2">Professor: {{professor1}} • {{days1}} • {{time1}} • {{credits1}} Credits • In-Person: {{inperson1}}</h6>
+                      <br />
+                      <p class="card-text">{{description1}}</p>
+                      <p class="card-text">SLN: {{sln1}}</p>
+                      <a href="{{url1}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename2}}</h5>
+                      <h5 class="card-title">Section {{section2}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor2}} • {{days2}} • {{time2}} • {{credits2}} Credits • In-Person: {{inperson2}}</h6>
+                      <br />
+                      <p class="card-text">{{description2}}</p>
+                      <p class="card-text">SLN: {{sln2}}</p>
+                      <a href="{{url2}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename3}}</h5>
+                      <h5 class="card-title">Section {{section3}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor3}} • {{days3}} • {{time3}} • {{credits3}} Credits • In-Person: {{inperson3}}</h6>
+                      <br />
+                      <p class="card-text">{{description3}}</p>
+                      <p class="card-text">SLN: {{sln3}}</p>
+                      <a href="{{url3}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename4}}</h5>
+                      <h5 class="card-title">Section {{section4}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor4}} • {{days4}} • {{time4}} • {{credits4}} Credits • In-Person: {{inperson4}}</h6>
+                      <br />
+                      <p class="card-text">{{description4}}</p>
+                      <p class="card-text">SLN: {{sln4}}</p>
+                      <a href="{{url4}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename5}}</h5>
+                      <h5 class="card-title">Section {{section5}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor5}} • {{days5}} • {{time5}} • {{credits5}} Credits • In-Person: {{inperson5}}</h6>
+                      <br />
+                      <p class="card-text">{{description5}}</p>
+                      <p class="card-text">SLN: {{sln5}}</p>
+                      <a href="{{url5}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename6}}</h5>
+                      <h5 class="card-title">Section {{section6}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor6}} • {{days6}} • {{time6}} • {{credits6}} Credits • In-Person: {{inperson6}}</h6>
+                      <br />
+                      <p class="card-text">{{description6}}</p>
+                      <p class="card-text">SLN: {{sln6}}</p>
+                      <a href="{{url6}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename7}}</h5>
+                      <h5 class="card-title">Section {{section7}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor7}} • {{days7}} • {{time7}} • {{credits7}} Credits • In-Person: {{inperson7}}</h6>
+                      <br />
+                      <p class="card-text">{{description7}}</p>
+                      <p class="card-text">SLN: {{sln7}}</p>
+                      <a href="{{url7}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename8}}</h5>
+                      <h5 class="card-title">Section {{section8}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor8}} • {{days8}} • {{time8}} • {{credits8}} Credits • In-Person: {{inperson8}}</h6>
+                      <br />
+                      <p class="card-text">{{description8}}</p>
+                      <p class="card-text">SLN: {{sln8}}</p>
+                      <a href="{{url8}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename9}}</h5>
+                      <h5 class="card-title">Section {{section9}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor9}} • {{days9}} • {{time9}} • {{credits9}} Credits • In-Person: {{inperson9}}</h6>
+                      <br />
+                      <p class="card-text">{{description9}}</p>
+                      <p class="card-text">SLN: {{sln9}}</p>
+                      <a href="{{url9}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="width: auto;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{coursename10}}</h5>
+                      <h5 class="card-title">Section {{section10}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Professor: {{professor10}} • {{days10}} • {{time10}} • {{credits10}} Credits • In-Person: {{inperson10}}</h6>
+                      <br />
+                      <p class="card-text">{{description10}}</p>
+                      <p class="card-text">SLN: {{sln10}}</p>
+                      <a href="{{url10}}" target="_blank" rel="noopener noreferrer" class="card-link">MyPlan Link</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4 gap-3">Back</a>
+          </div>
+     </main>      
+   </body>
+</html>

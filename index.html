@@ -1,0 +1,131 @@
+<!doctype html>
+<head>
+    <title>UW Course Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <script src=" {{ url_for('static', filename='jquery/jquery-3.6.4.min.js') }} "></script></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="{{ url_for('static', filename='images/UWlogo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rSlider.min.css') }}">
+    <script src="{{ url_for('static', filename='javascript/rSlider.min.js') }}"></script>
+</head>
+<html>
+   <body>
+     <main>
+      <div id="top">
+        <img src="{{ url_for('static', filename='images/UWlogo.png') }}" alt="UW Logo" title="UW Logo" width="145" height="100" id="logo"/>
+        <!-- <form method="post" action="{{url_for('load')}}" id="loadForm" name="loadform">
+          <button type="submit" class="btn btn-primary btn-lg px-4 gap-3" id="loader">Admin</button>
+        </form> -->
+      </div>
+      <div class="col-md-6 mx-auto text-center" id="title">
+        <label for="name" class="form-label fw-bold">UWB Course Planner</label>
+        <br /> 
+      </div>
+      
+      <br />
+
+      <div id="tutorial">
+      <br />
+        <div id="tutorialtext">
+          This application can be used by University of Washington Bothell students to find recommendations on what courses could be a good fit in their schedule. It does this through a vote based algorithm.
+          Note that this application is for suggested courses and not the only opinion a student should get. Please consult an academic advisor for any further questions about courses that may be considered.
+          <br />
+          <br />
+          To begin, select a campus, a planned or admitted major, and classes taken at UW. 
+          Additional constraints can be added to the query for better results. Some are required while some are optional.
+          <br />
+          <br />
+          The results will be in the form of a ranked list that will show what course is best to take next quarter (#1) given the constraints,
+          and the classes that may also be considered (#2-10). The application will try to find what is best through the voting algorithm.
+          For a full set of classes to take, try multiple different queries by changing aspects like time, days, etc. 
+          <br /> 
+          <br />
+          Optional filters include:
+          <ul>
+            <li>Time</li>
+            <li>Days</li>
+            <li>In-person/Online</li>
+            <li>Size</li>
+            <li>Education requirements</li>
+            <li>Curriculums</li>
+          </ul>
+          {{ bothellResult }}
+        </div> 
+        <div id="parameters">
+          <form method="post" action="{{url_for('results')}}" id="submitForm" name="initform">
+            <div id="majorpick">
+              Select your current or planned major:
+              <br />
+              <select class="form-select text-center" name="major" id="major" required>
+              </select>
+            </div>
+            <br />
+            Select the departments from classes you've taken:
+              <br />
+            <div id="coursepick">
+              Please select a campus first
+            </div>
+            <br />
+            <div id="courselist">
+            </div>
+            <br />
+            <div id="quarterpick">
+              Select Quarter:
+              <br />
+              <input type="radio" name="quarter" value="Summer 2023" required/> Summer 2023
+              <input type="radio" name="quarter" value="Autumn 2023" required/> Autumn 2023
+            </div>
+            <br />
+            Select time range you would like to find classes in:
+            <br />
+            <input name="time" type="text" id="slider1" class="slider">
+            <br />
+            <div id="days">
+              Select days you would like to find classes in:
+              <br />
+              <input type="checkbox" name="days" value="Monday">Monday
+              <input type="checkbox" name="days" value="Tuesday">Tuesday
+              <input type="checkbox" name="days" value="Wednesday">Wednesday
+              <input type="checkbox" name="days" value="Thursday">Thursday
+              <input type="checkbox" name="days" value="Friday">Friday
+            </div>
+            <br />
+            <div id="inperson">
+              In-Person / Online Preferences:
+              <input type="checkbox" value = "in-person" name="inperson">In-Person
+              <input type="checkbox" value = "online" name="online">Online
+            </div>
+            Class Size:
+            <br />
+            <input name="size" type="text" id="slider2" class="slider">
+            <br />
+            <div id="requirement">
+              Select any general education requirements you still need:
+              <br />
+              <input type="checkbox" name = "education" value="C">C
+              <input type="checkbox" name = "education" value="DIV">DIV
+              <input type="checkbox" name = "education" value="SSc">SSc
+              <input type="checkbox" name = "education" value="NSc">NSc
+              <input type="checkbox" name = "education" value="RSN">RSN
+              <input type="checkbox" name = "education" value="A&H">A&H
+              <input type="checkbox" name = "education" value="W">W
+            </div>
+            <br />
+            Select the curriculums that you are interested in or need to be in:
+            <div id="curriculum">
+              <br />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary btn-lg px-4 gap-3" id="button">Submit</button>
+            <br />
+            <br />
+          </form>
+        </div>
+      </div>
+      <script type="text/javascript">
+      </script>  
+      <script type="text/javascript" src=" {{ url_for('static', filename='javascript/script.js') }} "></script></script>
+     </main>  
+   </body>
+</html>
